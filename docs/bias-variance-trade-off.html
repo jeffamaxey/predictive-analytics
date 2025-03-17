@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.3 Bias-Variance Trade-off | Predictive Analytics</title>
+  <title>1.4 Bias-Variance Trade-off | Predictive Analytics</title>
   <meta name="description" content="A guide to the theory of predictive analytics." />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.3 Bias-Variance Trade-off | Predictive Analytics" />
+  <meta property="og:title" content="1.4 Bias-Variance Trade-off | Predictive Analytics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A guide to the theory of predictive analytics." />
   <meta name="github-repo" content="jeffamaxey/predictive-analytics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.3 Bias-Variance Trade-off | Predictive Analytics" />
+  <meta name="twitter:title" content="1.4 Bias-Variance Trade-off | Predictive Analytics" />
   
   <meta name="twitter:description" content="A guide to the theory of predictive analytics." />
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-model-building-process.html"/>
+<link rel="prev" href="constraints.html"/>
 <link rel="next" href="feature-generation-and-selection.html"/>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -175,10 +175,16 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1.1" data-path="basic-terminology.html"><a href="basic-terminology.html"><i class="fa fa-check"></i><b>1.1</b> Basic Terminology</a></li>
-<li class="chapter" data-level="1.2" data-path="the-model-building-process.html"><a href="the-model-building-process.html"><i class="fa fa-check"></i><b>1.2</b> The Model Building Process</a></li>
-<li class="chapter" data-level="1.3" data-path="bias-variance-trade-off.html"><a href="bias-variance-trade-off.html"><i class="fa fa-check"></i><b>1.3</b> Bias-Variance Trade-off</a></li>
-<li class="chapter" data-level="1.4" data-path="feature-generation-and-selection.html"><a href="feature-generation-and-selection.html"><i class="fa fa-check"></i><b>1.4</b> Feature Generation and Selection</a></li>
-<li class="chapter" data-level="1.5" data-path="conceptual-review-questions-for-chapter-1.html"><a href="conceptual-review-questions-for-chapter-1.html"><i class="fa fa-check"></i><b>1.5</b> Conceptual Review Questions for Chapter 1</a></li>
+<li class="chapter" data-level="1.2" data-path="the-model-building-process.html"><a href="the-model-building-process.html"><i class="fa fa-check"></i><b>1.2</b> The Model Building Process</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="the-model-building-process.html"><a href="the-model-building-process.html#exam-note"><i class="fa fa-check"></i><b>1.2.1</b> ⚠ EXAM NOTE ⚠</a></li>
+<li class="chapter" data-level="1.2.2" data-path="the-model-building-process.html"><a href="the-model-building-process.html#stage-1-problem-definition"><i class="fa fa-check"></i><b>1.2.2</b> Stage 1: Problem Definition</a></li>
+<li class="chapter" data-level="1.2.3" data-path="the-model-building-process.html"><a href="the-model-building-process.html#problem-definition"><i class="fa fa-check"></i><b>1.2.3</b> Problem Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="constraints.html"><a href="constraints.html"><i class="fa fa-check"></i><b>1.3</b> Constraints</a></li>
+<li class="chapter" data-level="1.4" data-path="bias-variance-trade-off.html"><a href="bias-variance-trade-off.html"><i class="fa fa-check"></i><b>1.4</b> Bias-Variance Trade-off</a></li>
+<li class="chapter" data-level="1.5" data-path="feature-generation-and-selection.html"><a href="feature-generation-and-selection.html"><i class="fa fa-check"></i><b>1.5</b> Feature Generation and Selection</a></li>
+<li class="chapter" data-level="1.6" data-path="conceptual-review-questions-for-chapter-1.html"><a href="conceptual-review-questions-for-chapter-1.html"><i class="fa fa-check"></i><b>1.6</b> Conceptual Review Questions for Chapter 1</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-exploration-and-visualization.html"><a href="data-exploration-and-visualization.html"><i class="fa fa-check"></i><b>2</b> Data Exploration and Visualization</a>
 <ul>
@@ -206,15 +212,15 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bias-variance-trade-off" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Bias-Variance Trade-off<a href="bias-variance-trade-off.html#bias-variance-trade-off" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bias-variance-trade-off" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Bias-Variance Trade-off<a href="bias-variance-trade-off.html#bias-variance-trade-off" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="the-model-building-process.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="constraints.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="feature-generation-and-selection.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

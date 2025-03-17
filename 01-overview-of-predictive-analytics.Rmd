@@ -251,6 +251,165 @@ manual.
 
 ## The Model Building Process {#the-model-building-process}
 
+Now that we have a first taste of what predictive analytics is like, in this
+important and rather lengthy section I will walk you through the main steps (the
+“life cycle”) involved in the construction and evaluation of a predictive model.
+In practice, model building typically requires a sequence of complex and
+inter-related decisions. The whole process is iterative and often more of an art
+than a science. The framework here is necessarily simplified and focuses on the
+most important steps in Exam PA, but is rich enough to show you what it takes to
+build a good model in real life.
+
+### ⚠ EXAM NOTE ⚠
+
+This section, for the most part, is conceptual and descriptive. There is not
+much mathematics and you may be tempted to skip this section under the
+impression that it won’t be on the exam. To your dismay, **it can be tested,
+sometimes heavily!** In recent years, there have been more exam tasks testing
+the conceptual aspects of predictive modeling, such as the considerations that
+go into collecting a good set of data and the pros and cons of treating a
+variable in a certain way, and there will only be **more and more such tasks in
+the new exam format**. Do read this section in some detail and try your best to
+understand why we do “this and that!”
+
+### Stage 1: Problem Definition
+
+The first step in any model building exercise is to clearly formulate the
+business problem to which predictive analytics will be applied.
+
+#### Characteristics of predictive modeling problems
+
+Before we decide to apply predictive analytics to solve a business problem, we
+should ensure that it is indeed a problem that should be addressed by predictive
+modeling. The business problem you will see on the exam must be one for which
+predictive modeling is suitable (otherwise, why is this exam called "Predictive
+Analytics!?" 😉), but a conceptual exam task, in an attempt to test Learning
+Outcome b) of Topic 1 in Exam PA:
+
+**"Describe the characteristics of predictive modeling problems,"**
+
+may ask you to:
+
+#### ⚠ POTENTIAL EXAM QUESTION ⚠
+
+*(3 points)* Explain two (or three) reasons why this business problem should be
+addressed by predictive modeling.
+
+Here are some common characteristics of predictive modeling problems suggested
+in the PA modules: *(A typical predictive modeling problem will have most, but
+not necessarily all of these characteristics.)*
+
+#### ⚠ EXAM NOTE ⚠
+
+Many of these characteristics border on common sense, but from an exam point of
+view, it is safe to follow the wording of the PA modules and phrase your
+response in a way expected by the SOA graders.
+
+-   **(Issue)** There is a clearly identified and defined business issue that
+    needs to be addressed.\
+    Predictive analytics always comes with a context. In the given context, what
+    overarching goal will developing a predictive model help us achieve? What
+    noble cause is it serving? There are often financial ends with a business
+    impact, e.g., profit enhancement, cost reduction, or process efficiency, and
+    the business issue will be made clear in the exam project statement.
+
+-   **(Questions)** The issue can be addressed with a few well-defined
+    questions.\
+    For predictive analytics to be applicable, the broad issue has to be broken
+    down into more specific questions, e.g.: *(This list is far from
+    exhaustive.)*
+
+    > -   What data do we need?\
+    > -   What is the target or outcome?\
+    > -   What is the success criteria, i.e., how will the model performance be
+    >     evaluated?
+
+-   **(Data)** Good and useful data is available for answering the questions
+    above.\
+    We can’t do predictive modeling in the vacuum without data. The various
+    considerations with the use of data will be discussed in Stage 2 below in
+    detail.
+
+-   **(Impact)** The predictions will likely drive actions or increase
+    understanding.\
+    If predictive analytics is an appropriate approach, then the predictions
+    produced by our models should lead to implementable changes or improve our
+    understanding of the business issue.
+
+-   **(Better solution)** Predictive analytics likely produces a solution better
+    than any existing approach.\
+    If there is an easier solution to the business problem without using a
+    predictive model, then perhaps predictive analytics is not warranted in the
+    first place.
+
+-   **(Update)** We can continue to monitor and update the models when new data
+    becomes available.
+
+### Problem Definition
+
+After deciding to use predictive analytics to address the business issue of
+interest, we should define the problem as clearly as possible. It is important
+to get to the root cause of the business issue and make it specific enough to be
+solvable. The following strategies suggested by the PA modules can help us come
+up with a meaningful problem definition and give our project a higher chance of
+success:
+
+-   **(Hypotheses)** It is useful to use our prior knowledge of the business
+    problem to ask questions and develop hypotheses that we can prove or
+    disprove in the course of our analytic work. Doing so helps us gain a
+    clearer understanding of the business issue and guide our efforts in a
+    clearly defined way. With the questions and hypotheses, we know where to
+    focus on.
+
+    In the actuarial salary example introduced in Section 1.1, it is perfectly
+    reasonable to hypothesize that the more exams passed, the higher the salary,
+    and pay attention to how positive that relationship is. If, to your
+    astonishment, your model is saying that salary tends to decrease with the
+    number of exams passed *(how could that be!? 😉)*, then almost surely there
+    is something wrong with your work, e.g., some data entries are erroneous.
+
+-   **(KPIs)** We also need ways to assess the outcome by selecting appropriate
+    key performance indicators, or KPIs. Ideally, the KPIs should possess the
+    following properties:
+
+    > -   **(Relevance)** The KPIs should align with the overall business
+    >     objective and the interest of your client as closely as possible.
+    > -   **(Measurability)** They should be easily measurable and provide an
+    >     objective, quantitative basis to measure the success of the project,
+    >     i.e., what key numbers will change in the future as a result of your
+    >     predictive analytic work. Often, the KPIs are defined in terms of
+    >     certain financial variables 💲, e.g., number of customers, profit
+    >     margin *(money talks!).*
+
+    In the actuarial salary example above, an appropriate KPI is the number of
+    new actuaries recruited as a result of a better understanding of the drivers
+    of salary.
+
+## Constraints
+
+As soon as we have defined the business problem clearly, it is important to
+evaluate the feasibility of solving the business problem and implementing the
+predictive analytic solution. We want to make sure that the solutions we produce
+will work. Some considerations and constraints we should keep in mind when
+evaluating and prioritizing business problems include: *(These items, taken from
+the PA modules, are by no means exhaustive.)*
+
+-   The availability of easily accessible and high-quality data *(more on data
+    in Stage 2)*
+
+-   Implementation issues such as the presence of the necessary IT
+    infrastructure and technology to fit complex models efficiently, the
+    timeline for completing the project, and the cost and effort required to
+    maintain the selected model.
+
+    Do we have the resources to implement complex models without freezing or
+    crashing? If a model is operationally prohibitive to execute, then it makes
+    sense to trade some prediction performance for ease of implementation. After
+    all, if we cannot implement and apply the model in practice, then it is
+    essentially useless.
+
+--------------------------------------------------------------------------------
+
 ## Bias-Variance Trade-off {#bias-variance-trade-off}
 
 ## Feature Generation and Selection {#feature-generation-and-selection}

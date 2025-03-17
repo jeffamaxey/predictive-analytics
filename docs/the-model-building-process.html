@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="basic-terminology.html"/>
-<link rel="next" href="bias-variance-trade-off.html"/>
+<link rel="next" href="constraints.html"/>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
@@ -175,10 +175,16 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1.1" data-path="basic-terminology.html"><a href="basic-terminology.html"><i class="fa fa-check"></i><b>1.1</b> Basic Terminology</a></li>
-<li class="chapter" data-level="1.2" data-path="the-model-building-process.html"><a href="the-model-building-process.html"><i class="fa fa-check"></i><b>1.2</b> The Model Building Process</a></li>
-<li class="chapter" data-level="1.3" data-path="bias-variance-trade-off.html"><a href="bias-variance-trade-off.html"><i class="fa fa-check"></i><b>1.3</b> Bias-Variance Trade-off</a></li>
-<li class="chapter" data-level="1.4" data-path="feature-generation-and-selection.html"><a href="feature-generation-and-selection.html"><i class="fa fa-check"></i><b>1.4</b> Feature Generation and Selection</a></li>
-<li class="chapter" data-level="1.5" data-path="conceptual-review-questions-for-chapter-1.html"><a href="conceptual-review-questions-for-chapter-1.html"><i class="fa fa-check"></i><b>1.5</b> Conceptual Review Questions for Chapter 1</a></li>
+<li class="chapter" data-level="1.2" data-path="the-model-building-process.html"><a href="the-model-building-process.html"><i class="fa fa-check"></i><b>1.2</b> The Model Building Process</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="the-model-building-process.html"><a href="the-model-building-process.html#exam-note"><i class="fa fa-check"></i><b>1.2.1</b> ⚠ EXAM NOTE ⚠</a></li>
+<li class="chapter" data-level="1.2.2" data-path="the-model-building-process.html"><a href="the-model-building-process.html#stage-1-problem-definition"><i class="fa fa-check"></i><b>1.2.2</b> Stage 1: Problem Definition</a></li>
+<li class="chapter" data-level="1.2.3" data-path="the-model-building-process.html"><a href="the-model-building-process.html#problem-definition"><i class="fa fa-check"></i><b>1.2.3</b> Problem Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="constraints.html"><a href="constraints.html"><i class="fa fa-check"></i><b>1.3</b> Constraints</a></li>
+<li class="chapter" data-level="1.4" data-path="bias-variance-trade-off.html"><a href="bias-variance-trade-off.html"><i class="fa fa-check"></i><b>1.4</b> Bias-Variance Trade-off</a></li>
+<li class="chapter" data-level="1.5" data-path="feature-generation-and-selection.html"><a href="feature-generation-and-selection.html"><i class="fa fa-check"></i><b>1.5</b> Feature Generation and Selection</a></li>
+<li class="chapter" data-level="1.6" data-path="conceptual-review-questions-for-chapter-1.html"><a href="conceptual-review-questions-for-chapter-1.html"><i class="fa fa-check"></i><b>1.6</b> Conceptual Review Questions for Chapter 1</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-exploration-and-visualization.html"><a href="data-exploration-and-visualization.html"><i class="fa fa-check"></i><b>2</b> Data Exploration and Visualization</a>
 <ul>
@@ -208,6 +214,138 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="the-model-building-process" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> The Model Building Process<a href="the-model-building-process.html#the-model-building-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that we have a first taste of what predictive analytics is like, in this
+important and rather lengthy section I will walk you through the main steps (the
+“life cycle”) involved in the construction and evaluation of a predictive model.
+In practice, model building typically requires a sequence of complex and
+inter-related decisions. The whole process is iterative and often more of an art
+than a science. The framework here is necessarily simplified and focuses on the
+most important steps in Exam PA, but is rich enough to show you what it takes to
+build a good model in real life.</p>
+<div id="exam-note" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> ⚠ EXAM NOTE ⚠<a href="the-model-building-process.html#exam-note" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This section, for the most part, is conceptual and descriptive. There is not
+much mathematics and you may be tempted to skip this section under the
+impression that it won’t be on the exam. To your dismay, <strong>it can be tested,
+sometimes heavily!</strong> In recent years, there have been more exam tasks testing
+the conceptual aspects of predictive modeling, such as the considerations that
+go into collecting a good set of data and the pros and cons of treating a
+variable in a certain way, and there will only be <strong>more and more such tasks in
+the new exam format</strong>. Do read this section in some detail and try your best to
+understand why we do “this and that!”</p>
+</div>
+<div id="stage-1-problem-definition" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Stage 1: Problem Definition<a href="the-model-building-process.html#stage-1-problem-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The first step in any model building exercise is to clearly formulate the
+business problem to which predictive analytics will be applied.</p>
+<div id="characteristics-of-predictive-modeling-problems" class="section level4 hasAnchor" number="1.2.2.1">
+<h4><span class="header-section-number">1.2.2.1</span> Characteristics of predictive modeling problems<a href="the-model-building-process.html#characteristics-of-predictive-modeling-problems" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Before we decide to apply predictive analytics to solve a business problem, we
+should ensure that it is indeed a problem that should be addressed by predictive
+modeling. The business problem you will see on the exam must be one for which
+predictive modeling is suitable (otherwise, why is this exam called “Predictive
+Analytics!?” 😉), but a conceptual exam task, in an attempt to test Learning
+Outcome b) of Topic 1 in Exam PA:</p>
+<p><strong>“Describe the characteristics of predictive modeling problems,”</strong></p>
+<p>may ask you to:</p>
+</div>
+<div id="potential-exam-question" class="section level4 hasAnchor" number="1.2.2.2">
+<h4><span class="header-section-number">1.2.2.2</span> ⚠ POTENTIAL EXAM QUESTION ⚠<a href="the-model-building-process.html#potential-exam-question" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>(3 points)</em> Explain two (or three) reasons why this business problem should be
+addressed by predictive modeling.</p>
+<p>Here are some common characteristics of predictive modeling problems suggested
+in the PA modules: <em>(A typical predictive modeling problem will have most, but
+not necessarily all of these characteristics.)</em></p>
+</div>
+<div id="exam-note-1" class="section level4 hasAnchor" number="1.2.2.3">
+<h4><span class="header-section-number">1.2.2.3</span> ⚠ EXAM NOTE ⚠<a href="the-model-building-process.html#exam-note-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Many of these characteristics border on common sense, but from an exam point of
+view, it is safe to follow the wording of the PA modules and phrase your
+response in a way expected by the SOA graders.</p>
+<ul>
+<li><p><strong>(Issue)</strong> There is a clearly identified and defined business issue that
+needs to be addressed.<br />
+Predictive analytics always comes with a context. In the given context, what
+overarching goal will developing a predictive model help us achieve? What
+noble cause is it serving? There are often financial ends with a business
+impact, e.g., profit enhancement, cost reduction, or process efficiency, and
+the business issue will be made clear in the exam project statement.</p></li>
+<li><p><strong>(Questions)</strong> The issue can be addressed with a few well-defined
+questions.<br />
+For predictive analytics to be applicable, the broad issue has to be broken
+down into more specific questions, e.g.: <em>(This list is far from
+exhaustive.)</em></p>
+<blockquote>
+<ul>
+<li>What data do we need?<br />
+</li>
+<li>What is the target or outcome?<br />
+</li>
+<li>What is the success criteria, i.e., how will the model performance be
+evaluated?</li>
+</ul>
+</blockquote></li>
+<li><p><strong>(Data)</strong> Good and useful data is available for answering the questions
+above.<br />
+We can’t do predictive modeling in the vacuum without data. The various
+considerations with the use of data will be discussed in Stage 2 below in
+detail.</p></li>
+<li><p><strong>(Impact)</strong> The predictions will likely drive actions or increase
+understanding.<br />
+If predictive analytics is an appropriate approach, then the predictions
+produced by our models should lead to implementable changes or improve our
+understanding of the business issue.</p></li>
+<li><p><strong>(Better solution)</strong> Predictive analytics likely produces a solution better
+than any existing approach.<br />
+If there is an easier solution to the business problem without using a
+predictive model, then perhaps predictive analytics is not warranted in the
+first place.</p></li>
+<li><p><strong>(Update)</strong> We can continue to monitor and update the models when new data
+becomes available.</p></li>
+</ul>
+</div>
+</div>
+<div id="problem-definition" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Problem Definition<a href="the-model-building-process.html#problem-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After deciding to use predictive analytics to address the business issue of
+interest, we should define the problem as clearly as possible. It is important
+to get to the root cause of the business issue and make it specific enough to be
+solvable. The following strategies suggested by the PA modules can help us come
+up with a meaningful problem definition and give our project a higher chance of
+success:</p>
+<ul>
+<li><p><strong>(Hypotheses)</strong> It is useful to use our prior knowledge of the business
+problem to ask questions and develop hypotheses that we can prove or
+disprove in the course of our analytic work. Doing so helps us gain a
+clearer understanding of the business issue and guide our efforts in a
+clearly defined way. With the questions and hypotheses, we know where to
+focus on.</p>
+<p>In the actuarial salary example introduced in Section 1.1, it is perfectly
+reasonable to hypothesize that the more exams passed, the higher the salary,
+and pay attention to how positive that relationship is. If, to your
+astonishment, your model is saying that salary tends to decrease with the
+number of exams passed <em>(how could that be!? 😉)</em>, then almost surely there
+is something wrong with your work, e.g., some data entries are erroneous.</p></li>
+<li><p><strong>(KPIs)</strong> We also need ways to assess the outcome by selecting appropriate
+key performance indicators, or KPIs. Ideally, the KPIs should possess the
+following properties:</p>
+<blockquote>
+<ul>
+<li><strong>(Relevance)</strong> The KPIs should align with the overall business
+objective and the interest of your client as closely as possible.</li>
+<li><strong>(Measurability)</strong> They should be easily measurable and provide an
+objective, quantitative basis to measure the success of the project,
+i.e., what key numbers will change in the future as a result of your
+predictive analytic work. Often, the KPIs are defined in terms of
+certain financial variables 💲, e.g., number of customers, profit
+margin <em>(money talks!).</em></li>
+</ul>
+</blockquote>
+<p>In the actuarial salary example above, an appropriate KPI is the number of
+new actuaries recruited as a result of a better understanding of the drivers
+of salary.</p></li>
+</ul>
+</div>
 </div>
             </section>
 
@@ -215,7 +353,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="basic-terminology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bias-variance-trade-off.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="constraints.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

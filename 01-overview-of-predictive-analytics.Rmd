@@ -260,8 +260,7 @@ than a science. The framework here is necessarily simplified and focuses on the
 most important steps in Exam PA, but is rich enough to show you what it takes to
 build a good model in real life.
 
-### ⚠ EXAM NOTE ⚠
-
+### ⚠ EXAM NOTE ⚠ { .unumbered}
 This section, for the most part, is conceptual and descriptive. There is not
 much mathematics and you may be tempted to skip this section under the
 impression that it won’t be on the exam. To your dismay, **it can be tested,
@@ -279,31 +278,22 @@ business problem to which predictive analytics will be applied.
 
 #### Characteristics of predictive modeling problems
 
-Before we decide to apply predictive analytics to solve a business problem, we
-should ensure that it is indeed a problem that should be addressed by predictive
-modeling. The business problem you will see on the exam must be one for which
-predictive modeling is suitable (otherwise, why is this exam called "Predictive
-Analytics!?" 😉), but a conceptual exam task, in an attempt to test Learning
-Outcome b) of Topic 1 in Exam PA:
+Before we decide to apply predictive analytics to solve a business problem, we should ensure that it is indeed a problem that should be addressed by predictive modeling. The business problem you will see on the exam must be one for which predictive modeling is suitable (otherwise, why is this exam called "Predictive Analytics!?" 😉), but a conceptual exam task, in an attempt to test Learning Outcome b) of Topic 1 in Exam PA:
 
 **"Describe the characteristics of predictive modeling problems,"**
 
 may ask you to:
 
-#### ⚠ POTENTIAL EXAM QUESTION ⚠
+### ⚠ POTENTIAL EXAM QUESTION ⚠ {.unnumbered}
 
 *(3 points)* Explain two (or three) reasons why this business problem should be
 addressed by predictive modeling.
 
-Here are some common characteristics of predictive modeling problems suggested
-in the PA modules: *(A typical predictive modeling problem will have most, but
-not necessarily all of these characteristics.)*
+Here are some common characteristics of predictive modeling problems suggested in the PA modules: *(A typical predictive modeling problem will have most, but not necessarily all of these characteristics.)*
 
-#### ⚠ EXAM NOTE ⚠
+### ⚠ EXAM NOTE ⚠ {.unnumbered}
 
-Many of these characteristics border on common sense, but from an exam point of
-view, it is safe to follow the wording of the PA modules and phrase your
-response in a way expected by the SOA graders.
+Many of these characteristics border on common sense, but from an exam point of view, it is safe to follow the wording of the PA modules and phrase your response in a way expected by the SOA graders.
 
 -   **(Issue)** There is a clearly identified and defined business issue that
     needs to be addressed.\

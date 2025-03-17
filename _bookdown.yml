@@ -1,8 +1,14 @@
 book_filename: "bookdownproj"
+repo: https://github.com/jeffamaxey/predictive-analytics/
 output_dir: docs
+clean: [packages.bib, bookdown.bbl]
 delete_merged_file: true
-edit: https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/%s
-view: https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/%s
+edit: https://github.com/jeffamaxey/predictive-analytics/edit/main/%s
+view: https://github.com/jeffamaxey/predictive-analytics/blob/main/%s
 language:
+  label:
+    fig: "FIGURE "
+    tab: "TABLE "
   ui:
-    chapter_name: "Chapter "
+    edit: "Edit"
+    chapter_name: ""

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="1.1 Basic Terminology | Predictive Analytics" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="A guide to the theory of predictive analytics." />
+<meta name="github-repo" content="jeffamaxey/predictive-analytics" />
+
+<meta name="author" content="Jeff Maxey" />
+
+<meta name="date" content="2025-03-17" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="A guide to the theory of predictive analytics.">
+
+<title>1.1 Basic Terminology | Predictive Analytics</title>
+
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if bootstrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#preface" id="toc-preface">Preface</a>
+<ul>
+<li><a href="why-read-this-book.html#why-read-this-book" id="toc-why-read-this-book">Why read this book</a></li>
+<li><a href="structure-of-the-book.html#structure-of-the-book" id="toc-structure-of-the-book">Structure of the book</a></li>
+<li><a href="software-information-and-conventions.html#software-information-and-conventions" id="toc-software-information-and-conventions">Software information and conventions</a></li>
+<li><a href="acknowledgments.html#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+</ul></li>
+<li class="part"><span><b>I Introduction to Predictive Analytics</b></span></li>
+<li class="has-sub"><a href="1-overview-of-predictive-analytics.html#overview-of-predictive-analytics" id="toc-overview-of-predictive-analytics"><span class="toc-section-number">1</span> Overview of Predictive Analytics</a>
+<ul>
+<li><a href="introduction.html#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="1.1-basic-terminology.html#basic-terminology" id="toc-basic-terminology"><span class="toc-section-number">1.1</span> Basic Terminology</a></li>
+<li><a href="1.2-the-model-building-process.html#the-model-building-process" id="toc-the-model-building-process"><span class="toc-section-number">1.2</span> The Model Building Process</a></li>
+<li><a href="1.3-bias-variance-trade-off.html#bias-variance-trade-off" id="toc-bias-variance-trade-off"><span class="toc-section-number">1.3</span> Bias-Variance Trade-off</a></li>
+<li><a href="1.4-feature-generation-and-selection.html#feature-generation-and-selection" id="toc-feature-generation-and-selection"><span class="toc-section-number">1.4</span> Feature Generation and Selection</a></li>
+<li><a href="1.5-conceptual-review-questions-for-chapter-1.html#conceptual-review-questions-for-chapter-1" id="toc-conceptual-review-questions-for-chapter-1"><span class="toc-section-number">1.5</span> Conceptual Review Questions for Chapter 1</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-data-exploration-and-visualization.html#data-exploration-and-visualization" id="toc-data-exploration-and-visualization"><span class="toc-section-number">2</span> Data Exploration and Visualization</a>
+<ul>
+<li><a href="2.1-univariate-data-exploration.html#univariate-data-exploration" id="toc-univariate-data-exploration"><span class="toc-section-number">2.1</span> Univariate Data Exploration</a></li>
+<li><a href="2.2-bivariate-data-exploration.html#bivariate-data-exploration" id="toc-bivariate-data-exploration"><span class="toc-section-number">2.2</span> Bivariate Data Exploration</a></li>
+<li><a href="2.3-conceptual-review-questions-for-chapter-2.html#conceptual-review-questions-for-chapter-2" id="toc-conceptual-review-questions-for-chapter-2"><span class="toc-section-number">2.3</span> Conceptual Review Questions for Chapter 2</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="basic-terminology" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Basic Terminology</h2>
+<p><strong>Predictive Analytics in a nutshell.</strong> Three main categories of predictive
+analytics problems:</p>
+<ul>
+<li><p><strong><em>Descriptive:</em></strong> Focuses on what happened in the past and aims to
+“describe” or explain the observed patterns by identifying the relationships
+between different variables in the data.</p>
+<p><strong>Example.</strong> If you saw an increase in the lapse rate among the
+policyholders of a certain line of business, what kind of policyholders had
+the highest tendency to lapse? What are their key characteristics? This is a
+question addressed by descriptive analytics.</p></li>
+<li><p><strong><em>Predictive:</em></strong> Focuses on what will happen in the <em>future</em> and is
+concerned with making accurate “predictions”.</p>
+<p><strong>Example:</strong> For a prospective policyholder with certain characteristics,
+what is their predicted probability of lapse? The ability to make such a
+prediction will be useful for identifying future policyholders who will have
+a lower probability of lapse and contribute to the profitability of an
+insurer.</p></li>
+<li><p><strong><em>Prescriptive:</em></strong> Uses a combination of optimization and simulation to
+quantify the impact of different “prescribed” actions in different
+scenarios.</p>
+<p><strong>Example:</strong> If we reduce the premium by a certain amount, how will this
+affect the lapse rate? More generally, what is the best course of action to
+reduce the lapse rate? Prescriptive analytics may give us some useful
+insight.</p></li>
+</ul>
+<p>All predictive problems have something in common. There is always an output (or
+outcome) of interest, which can be numeric (salary, premium) or categorical
+(positive/negative, email/spam), and we have at our disposal a collection of
+input variables that may offer potentially useful information for predicting or
+understanding the output.</p>
+<p>This “input-output” setting, depicted below, is characteristic of predictive
+analytics in general, and our job is to develop a model teasing the (possibly
+complex, overlapping) contributions of the inputs to the output.</p>
+<p><span class="math display">\[
+\underset{\underset{Output}{\text{Target Variable}}}{Y} \overset{\text{Predict}}{\underset{\text{}}{\dashleftarrow}}\underset{\underset{Inputs}{\text{Predictors}}}{X = (X_1,...,Xp)}
+\]</span></p>
+<p><strong>Classification of Variables.</strong> Predictive analytics requires data, often with
+a large number of observations and variables. In Exam PA, we will be mostly
+dealing with datasets that can be displayed in the following
+observation-by-variable rectangular array format (such data is called
+<strong><em>structured data</em></strong> and is stored in <code>R</code> in a data frame).</p>
+<table>
+<caption><strong>TABLE 1:</strong> Structured Data Format</caption>
+<colgroup>
+<col width="24%" />
+<col width="17%" />
+<col width="23%" />
+<col width="12%" />
+<col width="8%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong><em>Observation</em></strong></th>
+<th align="center"><strong><em>Target</em></strong></th>
+<th align="center"><strong><em>Predictors</em></strong></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(Y\)</span></td>
+<td align="center"><span class="math inline">\(X_1\)</span></td>
+<td align="center"><span class="math inline">\(X_2\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(X_p\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(Y_1\)</span></td>
+<td align="center"><span class="math inline">\(X_{11}\)</span></td>
+<td align="center"><span class="math inline">\(X_{12}\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(X_{1p}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(Y_2\)</span></td>
+<td align="center"><span class="math inline">\(X_{21}\)</span></td>
+<td align="center"><span class="math inline">\(X_{22}\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(X_{2p}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(n\)</span></td>
+<td align="center"><span class="math inline">\(Y_n\)</span></td>
+<td align="center"><span class="math inline">\(X_{n1}\)</span></td>
+<td align="center"><span class="math inline">\(X_{n2}\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+<td align="center"><span class="math inline">\(X_{np}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In the dataset above, the <em>observations</em> are shown across the rows of the array
+(from 1 to <span class="math inline">\(n\)</span>) and the corresponding <em>variable</em> values are shown in the
+columns. Each observation comprises measurements taken for multiple variables,
+so, for example, the first observation of the data consists of:</p>
+<p><span class="math display">\[
+Y_1,X_{11},X_{12},...,X_{1p},
+\]</span></p>
+<p>not just <span class="math inline">\(Y_1\)</span> or <span class="math inline">\(X_{11},X_{12},...,X_{1p}\)</span>. In the actuarial salary example
+above, you can think of each observation as an actuary you are able to sample,
+and the variables represent the characteristics of that actuary.</p>
+<p>Generally speaking, there are two ways to classify variables in a predictive
+analytics context: By their role in the study (intended use) or by their nature
+(characteristics).</p>
+<ul>
+<li><p><strong>By Role: Target vs. Predictors</strong></p>
+<p>In the dataset above, we refer to the variable that we are interested in as
+the <strong><em>target variable</em></strong>, or simply the <strong><em>target</em></strong> (a.k.a <strong><em>response
+variable</em></strong>, <strong><em>dependent variable</em></strong>, <em><strong>output variable</strong>, <strong>outcome
+variable</strong>),</em> and denote it by <span class="math inline">\(\bf{Y}\)</span>.</p>
+<p>Despite the target variable being our prime interest, in most situations we
+cannot change the target directly, but we have more direct control over some
+associated variables which may offer explanatory information about the
+target. These variables go by different names, such as <strong><em>predictors</em></strong>,
+<strong><em>explanatory variables, independent variables, input variables,</em></strong> or
+sometimes simply <strong><em>variables</em></strong> if no confusion arises, and we denote them
+by <span class="math inline">\(\bf{X_1, X_2, ..., X_p}\)</span>. In an actuarial context, predictors are also
+known as risk factors or risk drivers. In the rest of this manual, we will
+mostly use the term “predictors” and “features”.</p>
+<p>Throughout the study of predictive analytics, it is useful to think of a
+predictive model as the following functional relationship between the target
+variable <span class="math inline">\(\bf{Y}\)</span> and the corresponding set of <span class="math inline">\(\bf{p}\)</span> predictors
+<span class="math inline">\(\bf{X=(X_1,...,X_p)}\)</span> (collected as a vector):</p>
+<p><span class="math display" id="eq:modelformula">\[
+\begin{equation}
+Y_i=f\left(X_i\right)+\epsilon_i, i=1,...,n
+\tag{1.1}
+\end{equation}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li>The subscript <span class="math inline">\(i\)</span> signifies the <span class="math inline">\(i\)</span>-th observation in the dataset, so
+<span class="math inline">\(Y_i\)</span> is the value of the target variable for the <span class="math inline">\(i\)</span>-th observation and
+<span class="math inline">\(X_i = (X_{i1}, ..., X_{ip})\)</span> is the corresponding vector of predictor
+values.</li>
+<li><span class="math inline">\(f\)</span> is a fixed (non-random) but unknown function corresponding the
+predictors and the target variable.
+<ul>
+<li>Without the subscript <span class="math inline">\(i\)</span> (note that is <span class="math inline">\(f\)</span> rather than <span class="math inline">\(f_i\)</span>), the
+function applies to all observations in the data, and forms the
+“systematic” part of <a href="1.1-basic-terminology.html#eq:modelformula">(1.1)</a>.</li>
+<li>Largely synonymous with the model, this function carries the
+systematic information that the predictors offer about the target
+variable, and allows us to differentiate, or discriminate, the
+observations of the target variable on the basis of those
+predictors.</li>
+</ul></li>
+<li><span class="math inline">\(\epsilon_i\)</span> is a zero-mean random error term carrying information that
+is specific to the <span class="math inline">\(i\)</span>-th observation, hence “idiosyncratic” and the
+presence of the subscript <span class="math inline">\(i\)</span>.
+<ul>
+<li>It can be regarded as the catch-all for what the systematic
+component of the model misses, e.g., the true relationship between
+<span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is probably more complex than <a href="1.1-basic-terminology.html#eq:modelformula">(1.1)</a>,
+there are other variables associated with <span class="math inline">\(Y\)</span> omitted by the model.</li>
+</ul></li>
+</ul>
+<p>Although <a href="1.1-basic-terminology.html#eq:modelformula">(1.1)</a> looks abstract and the exam will not test it
+directly, it will provide a useful framework for thinking about predictive
+analytics. For convenience, we will refer to <span class="math inline">\(f\)</span> and <span class="math inline">\(\epsilon_i\)</span>
+respectively as the signal function and the noise, which are widely used
+terms originally stemming from engineering.</p>
+<dl>
+<dt>Goal of Predictive Analytics</dt>
+<dd>
+<p>We are interested in the signal, but the data we have is “contaminated”
+with noise.</p>
+<p>The goal of predictive analytics is to filter out the noise and use a
+variety of tools and techniques to learn as much and as accurately about
+the signal as possible from the data.</p>
+<p>The knowledge about the signal can then provide us with a basis for
+understanding the data-generating process underlying the population of
+interest and making predictions for the target variable.</p>
+</dd>
+</dl></li>
+<li><p><strong>By Nature: Numeric vs. Categorical</strong></p>
+<p>Variables can also be classified as <strong><em>numeric</em></strong> variables or
+<strong><em>categorical</em></strong> variables. Such a classification has important
+implications for developing an effective predictive model that aligns with
+the characteristics of the target variable and predictors to produce
+realistic output.</p>
+<ul>
+<li><strong>Numeric (Quantitative) Variables:</strong> Numeric values that can take the
+form of numbers with a well-defined order and an associated range.
+<ul>
+<li><strong>Discrete:</strong> Restricted to only certain numeric values in that
+range, e.g., non-negative numbers.</li>
+<li><strong>Continuous:</strong> Can assume any numeric value within the range of the
+variable, at least in theory.</li>
+</ul></li>
+<li><strong>Categorical (Qualitative/Factor) Variables:</strong> Takes predefined values
+in a countable collection of “categories”, also called the <strong><em>levels</em></strong>
+or <strong><em>classes</em></strong> of the variable.
+<ul>
+<li><strong>Nominal:</strong>Levels have no numeric order, i.e., we cannot say which
+category is larger or smaller.
+<ul>
+<li><strong>Examples:</strong> Smoking Status, Gender, Marital Status</li>
+</ul></li>
+<li><strong>Ordinal:</strong> Levels have a natural order.
+<ul>
+<li><strong>Examples:</strong> Health Status (Poor, Moderate, Good), Risk Group
+(Preferred, Standard, Rated, Uninsurable).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p></p>
+<div class="rmdnote">
+In predictive modeling, the type of model to use is largely determined by the the nature of the target variable, not the predictors.
+</div></li>
+</ul>
+</div>
+<p style="text-align: center;">
+<a href="introduction.html"><button class="btn btn-default">Previous</button></a>
+<a href="https://github.com/jeffamaxey/predictive-analytics/edit/main/01-overview-of-predictive-analytics.Rmd"><button class="btn btn-default">Edit</button></a>
+<a href="1.2-the-model-building-process.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Data Exploration and Visualization {#data-exploration-and-visualization}
+
+## Univariate Data Exploration {#univariate-data-exploration}
+
+## Bivariate Data Exploration {#bivariate-data-exploration}
+
+## Conceptual Review Questions for Chapter 2 {#conceptual-review-questions-for-chapter-2}

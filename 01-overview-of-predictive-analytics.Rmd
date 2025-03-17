@@ -319,8 +319,8 @@ response in a way expected by the SOA graders.
     down into more specific questions, e.g.: *(This list is far from
     exhaustive.)*
 
-    > -   What data do we need?\
-    > -   What is the target or outcome?\
+    > -   What data do we need?
+    > -   What is the target or outcome?
     > -   What is the success criteria, i.e., how will the model performance be
     >     evaluated?
 

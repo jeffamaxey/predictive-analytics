@@ -260,7 +260,8 @@ than a science. The framework here is necessarily simplified and focuses on the
 most important steps in Exam PA, but is rich enough to show you what it takes to
 build a good model in real life.
 
-### ⚠ EXAM NOTE ⚠ { .unumbered}
+### ⚠ EXAM NOTE ⚠ {-}
+
 This section, for the most part, is conceptual and descriptive. There is not
 much mathematics and you may be tempted to skip this section under the
 impression that it won’t be on the exam. To your dismay, **it can be tested,
@@ -284,14 +285,14 @@ Before we decide to apply predictive analytics to solve a business problem, we s
 
 may ask you to:
 
-### ⚠ POTENTIAL EXAM QUESTION ⚠ {.unnumbered}
+### ⚠ POTENTIAL EXAM NOTE {-}
 
 *(3 points)* Explain two (or three) reasons why this business problem should be
 addressed by predictive modeling.
 
 Here are some common characteristics of predictive modeling problems suggested in the PA modules: *(A typical predictive modeling problem will have most, but not necessarily all of these characteristics.)*
 
-### ⚠ EXAM NOTE ⚠ {.unnumbered}
+### ⚠ EXAM NOTE ⚠ {-}
 
 Many of these characteristics border on common sense, but from an exam point of view, it is safe to follow the wording of the PA modules and phrase your response in a way expected by the SOA graders.
 

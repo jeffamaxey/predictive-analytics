@@ -2,7 +2,6 @@ eq:modelformula
 overview-of-predictive-analytics
 basic-terminology
 the-model-building-process
-exam-note
 stage-1-problem-definition
 characteristics-of-predictive-modeling-problems
 problem-definition
